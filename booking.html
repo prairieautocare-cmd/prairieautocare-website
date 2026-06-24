@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Request a Quote | Prairie Auto Care</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav>
+
+    <div class="logo">
+      Prairie <span>Auto Care</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+
+  </nav>
+
+  <section class="booking-page">
+
+    <div class="booking-container">
+
+      <h1>Request a Quote</h1>
+
+      <p>
+        Tell us about your vehicle and we'll provide
+        a personalized detailing quote.
+      </p>
+
+      <form
+  action="https://formspree.io/f/mbdvdewb"
+  method="POST"
+  class="booking-form"
+>
+     <h2>Customer Information</h2>
+
+<p class="form-info">
+  We use this information only to provide a quote and contact you
+  regarding your detailing request. Your information is never sold
+  to third parties.
+</p>
+
+<input
+  type="text"
+  name="name"
+  placeholder="Full Name"
+  required
+>
+
+<input
+  type="tel"
+  id="phone"
+  name="phone"
+  placeholder="Phone Number"
+>
+
+<input
+  type="email"
+  id="email"
+  name="email"
+  placeholder="Email Address"
+>
+
+<input
+  type="text"
+  name="address"
+  placeholder="Location of detail (address)"
+  required
+>
+
+<h2>Vehicle Information</h2>
+
+<input
+  type="number"
+  name="year"
+  placeholder="Vehicle Year"
+  required
+>
+
+<input
+  type="text"
+  name="make"
+  placeholder="Vehicle Make"
+  required
+>
+
+<input
+  type="text"
+  name="model"
+  placeholder="Vehicle Model"
+  required
+>
+
+<h2>Requested Service</h2>
+
+<select
+  name="service"
+  id="serviceSelect"
+  required
+>
+  <option value="">
+    Select Service
+  </option>
+
+  <option value="interior">
+    Interior Detail
+  </option>
+
+  <option value="exterior">
+    Exterior Detail
+  </option>
+
+  <option value="full">
+    Full Detail Package
+  </option>
+
+</select>
+
+
+<div id="interiorConditionContainer">
+
+  <h2>Interior Condition</h2>
+
+  <select
+    name="interior_condition"
+    id="interiorCondition"
+  >
+    <option value="">
+      Interior Condition
+    </option>
+
+    <option>Excellent</option>
+    <option>Good</option>
+    <option>Fair</option>
+    <option>Heavily Soiled</option>
+
+  </select>
+
+</div>
+
+<div id="exteriorConditionContainer">
+
+  <h2>Exterior Condition</h2>
+
+  <select
+    name="exterior_condition"
+    id="exteriorCondition"
+  >
+    <option value="">
+      Exterior Condition
+    </option>
+
+    <option>Excellent</option>
+    <option>Good</option>
+    <option>Fair</option>
+    <option>Needs Significant Cleaning</option>
+
+  </select>
+
+</div>
+
+<h2>Additional Notes</h2>
+
+<textarea
+  name="notes"
+  placeholder="Tell us anything else that may affect the quote..."
+></textarea>
+
+<button
+  type="submit"
+  class="btn btn-primary"
+>
+  Request Quote
+</button>
+      </form>
+
+    </div>
+
+  </section>
+<script src="script.js"></script>
+</body>
+</html>

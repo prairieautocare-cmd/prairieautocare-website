@@ -372,4 +372,72 @@ footer{
   letter-spacing:1px;
 }.service-card h3{
   color:#ffffff;
+}/* BOOKING PAGE */
+
+.booking-page{
+  padding:140px 20px 80px;
+  background:#0d0d0d;
+}
+
+.booking-container{
+  max-width:850px;
+  margin:auto;
+  background:#161616;
+  padding:50px;
+  border-radius:20px;
+  border:1px solid #2d2d2d;
+}
+
+.booking-container h1{
+  text-align:center;
+  margin-bottom:15px;
+  font-size:3rem;
+}
+
+.booking-container p{
+  text-align:center;
+  color:#b8b8b8;
+  margin-bottom:40px;
+}
+
+.booking-form h2{
+  margin-top:30px;
+  margin-bottom:15px;
+  color:#d4af37;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+  width:100%;
+  padding:16px;
+  margin-bottom:15px;
+  background:#1f1f1f;
+  color:white;
+  border:1px solid #333;
+  border-radius:10px;
+  font-size:1rem;
+}
+
+.booking-form textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus{
+  outline:none;
+  border-color:#2d8cff;
+}
+
+.booking-form button{
+  width:100%;
+  margin-top:20px;
+  font-size:1.1rem;
+}.form-info{
+  color:#b8b8b8;
+  margin-bottom:20px;
+  line-height:1.6;
+  font-size:0.95rem;
 }
