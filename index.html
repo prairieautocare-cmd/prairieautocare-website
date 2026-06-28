@@ -61,7 +61,6 @@
   <!-- SERVICES -->
 
   <section class="services" id="services">
-<section class="services" id="services">
 
   <div class="section-title">
     <h2>Our Services</h2>
@@ -118,8 +117,6 @@
 
   </div>
 
-</section>
-
   </section>
 
   <!-- ABOUT -->
@@ -144,9 +141,18 @@
         Our goal is to provide our fellow Stoon residents with a quality vehicle detail 100% of the time.
       </p>
 
-      <a href="#contact" class="btn btn-primary">
-        Contact Us
-      </a>
+      <div class="contact-dropdown">
+        <button class="btn btn-primary" onclick="this.parentElement.classList.toggle('open')">
+          Contact Us
+        </button>
+        <div class="contact-options">
+          <div class="contact-fork"></div>
+          <div class="contact-prongs">
+            <a href="tel:+13062807228">Call</a>
+            <a href="mailto:prairieautocare@gmail.com">Email</a>
+          </div>
+        </div>
+      </div>
 
     </div>
 
@@ -162,8 +168,8 @@
       Contact Prairie Auto Care today to schedule your detail.
     </p>
 
-    <a href="tel:+13062807228" class="btn btn-primary">
-      Get In Touch
+    <a href="booking.html" class="btn btn-primary">
+      Get a Quote
     </a>
 
   </section>

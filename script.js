@@ -66,3 +66,5 @@ document.querySelector(".booking-form")
   }
 
 });
+
+document.addEventListener('click', e => { if (!e.target.closest('.contact-dropdown')) document.querySelectorAll('.contact-dropdown').forEach(d => d.classList.remove('open')); });

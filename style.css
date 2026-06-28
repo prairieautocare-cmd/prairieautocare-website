@@ -97,9 +97,11 @@ nav{
   gap:20px;
 }
 
+/* BUTTONS */
+
 .btn{
+  border-radius:999px;
   padding:15px 30px;
-  border-radius:5px;
   text-decoration:none;
   font-weight:bold;
   transition:0.3s;
@@ -168,6 +170,7 @@ nav{
 
 .service-card h3{
   margin-bottom:15px;
+  color:#ffffff;
 }
 
 .service-card p{
@@ -307,45 +310,7 @@ footer{
   text-align:center;
 }
 
-/* MOBILE */
-
-@media(max-width:900px){
-
-  .hero h1{
-    font-size:3rem;
-  }
-
-  .about{
-    grid-template-columns:1fr;
-  }
-
-  .nav-links{
-    display:none;
-  }
-}
-
-@media(max-width:600px){
-
-  .hero h1{
-    font-size:2.3rem;
-  }
-
-  .section-title h2,
-  .about-text h2,
-  .cta h2,
-  .gallery-header h1{
-    font-size:2rem;
-  }
-
-  .hero-buttons{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .vehicle-grid{
-    grid-template-columns:1fr;
-  }
-}/* FEATURED SERVICE */
+/* FEATURED SERVICE */
 
 .featured-service{
   transform:scale(1.06);
@@ -370,9 +335,9 @@ footer{
   font-size:0.75rem;
   font-weight:bold;
   letter-spacing:1px;
-}.service-card h3{
-  color:#ffffff;
-}/* BOOKING PAGE */
+}
+
+/* BOOKING PAGE */
 
 .booking-page{
   padding:140px 20px 80px;
@@ -435,9 +400,155 @@ footer{
   width:100%;
   margin-top:20px;
   font-size:1.1rem;
-}.form-info{
+}
+
+.form-info{
   color:#b8b8b8;
   margin-bottom:20px;
   line-height:1.6;
   font-size:0.95rem;
+}
+
+/* CONTACT DROPDOWN */
+
+.contact-dropdown{
+  position:relative;
+  display:inline-block;
+}
+
+/* the fork is drawn with an SVG so spacing is pixel-perfect */
+.contact-options{
+  display:none;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:100;
+  flex-direction:column;
+  align-items:center;
+  gap:0;
+  padding-top:0;
+  width:200px;
+}
+
+.contact-dropdown.open .contact-options{
+  display:flex;
+}
+
+/* SVG fork drawn as background on a spacer div */
+.contact-fork{
+  width:100%;
+  height:50px;
+  position:relative;
+}
+
+/* vertical stem */
+.contact-fork::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:2px;
+  height:25px;
+  background:white;
+}
+
+/* horizontal crossbar — spans exactly between the two button centers */
+.contact-fork::after{
+  content:'';
+  position:absolute;
+  top:25px;
+  left:25%;
+  width:50%;
+  height:2px;
+  background:white;
+}
+
+.contact-prongs{
+  display:flex;
+  width:100%;
+  justify-content:space-between;
+  position:relative;
+}
+
+/* left prong */
+.contact-prongs::before{
+  content:'';
+  position:absolute;
+  bottom:100%;
+  left:25%;
+  transform:translateX(-50%);
+  width:2px;
+  height:25px;
+  background:white;
+}
+
+/* right prong */
+.contact-prongs::after{
+  content:'';
+  position:absolute;
+  bottom:100%;
+  right:25%;
+  transform:translateX(50%);
+  width:2px;
+  height:25px;
+  background:white;
+}
+
+.contact-options a{
+  position:relative;
+  display:block;
+  padding:10px 22px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:999px;
+  border:2px solid white;
+  white-space:nowrap;
+  transition:0.3s;
+}
+
+.contact-options a:hover{
+  background:white;
+  color:black;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .hero h1{
+    font-size:3rem;
+  }
+
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  .nav-links{
+    display:none;
+  }
+}
+
+@media(max-width:600px){
+
+  .hero h1{
+    font-size:2.3rem;
+  }
+
+  .section-title h2,
+  .about-text h2,
+  .cta h2,
+  .gallery-header h1{
+    font-size:2rem;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .vehicle-grid{
+    grid-template-columns:1fr;
+  }
 }
