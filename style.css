@@ -552,3 +552,8 @@ footer{
     grid-template-columns:1fr;
   }
 }
+/* LOGO AS LINK */
+a.logo {
+  text-decoration: none;
+  color: white;
+}
