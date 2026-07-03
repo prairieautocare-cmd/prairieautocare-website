@@ -660,7 +660,8 @@ footer{
   }
 
   .contact-dropdown{
-    display:block;
+    display:inline-block;
+    width:fit-content;
     margin-top:100px;
     margin-bottom:50px;
   }
