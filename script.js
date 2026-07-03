@@ -29,7 +29,7 @@ function updateForm() {
     exteriorContainer.style.display = "block";
   }
 
-  if (service === "full") {
+  if (service === "full" || service === "basic") {
     interiorContainer.style.display = "block";
     exteriorContainer.style.display = "block";
   }
