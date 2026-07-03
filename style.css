@@ -462,84 +462,86 @@ footer{
 .contact-dropdown{
   position:relative;
   display:inline-block;
+  margin-top:50px;
 }
 
-/* the fork is drawn with an SVG so spacing is pixel-perfect */
 .contact-options{
   display:none;
   position:absolute;
-  left:50%;
-  transform:translateX(-50%);
+  left:100%;
+  top:50%;
+  transform:translateY(-50%);
   z-index:100;
-  flex-direction:column;
+  flex-direction:row;
   align-items:center;
+  height:130px;
   gap:0;
-  padding-top:0;
-  width:200px;
 }
 
 .contact-dropdown.open .contact-options{
   display:flex;
 }
 
-/* SVG fork drawn as background on a spacer div */
+/* horizontal spacer between the button and the two links */
 .contact-fork{
-  width:100%;
-  height:50px;
+  width:70px;
+  height:100%;
   position:relative;
+  flex-shrink:0;
 }
 
-/* vertical stem */
+/* stem — runs from the button out to the crossbar */
 .contact-fork::before{
   content:'';
   position:absolute;
-  top:0;
-  left:50%;
-  transform:translateX(-50%);
-  width:2px;
-  height:25px;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  width:35px;
+  height:2px;
   background:white;
 }
 
-/* horizontal crossbar — spans exactly between the two button centers */
+/* crossbar — spans exactly between the two link centers */
 .contact-fork::after{
   content:'';
   position:absolute;
-  top:25px;
-  left:25%;
-  width:50%;
-  height:2px;
+  left:35px;
+  top:25%;
+  width:2px;
+  height:50%;
   background:white;
 }
 
 .contact-prongs{
   display:flex;
-  width:100%;
+  flex-direction:column;
+  height:100%;
   justify-content:space-between;
   position:relative;
 }
 
-/* left prong */
+/* top prong */
 .contact-prongs::before{
   content:'';
   position:absolute;
-  bottom:100%;
-  left:25%;
-  transform:translateX(-50%);
-  width:2px;
-  height:25px;
+  right:100%;
+  top:25%;
+  transform:translateY(-50%);
+  width:35px;
+  height:2px;
   background:white;
 }
 
-/* right prong */
+/* bottom prong */
 .contact-prongs::after{
   content:'';
   position:absolute;
-  bottom:100%;
-  right:25%;
-  transform:translateX(50%);
-  width:2px;
-  height:25px;
+  right:100%;
+  top:75%;
+  transform:translateY(-50%);
+  width:35px;
+  height:2px;
   background:white;
 }
 
@@ -655,6 +657,12 @@ footer{
 
   .about{
     grid-template-columns:1fr;
+  }
+
+  .contact-dropdown{
+    display:block;
+    margin-top:100px;
+    margin-bottom:50px;
   }
 
   .nav-links{
