@@ -38,12 +38,11 @@ src="https://www.facebook.com/tr?id=1515621239723462&ev=PageView&noscript=1"
   <section class="booking-page">
     <div class="booking-container">
       <h1>Request a Quote</h1>
-      <p>Tell us about your vehicle and we'll provide a personalized detailing quote.</p>
+      <p>Tell us about your vehicle and we'll contact you via email with a personilized quote.</p>
       <form action="https://formspree.io/f/mbdvdewb" method="POST" class="booking-form">
         <h2>Customer Information</h2>
         <p class="form-info">We use this information only to provide a quote and contact you regarding your detailing request. Your information is never sold to third parties.</p>
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+        <input type="text" name="name" placeholder="Name" required>
         <input type="email" id="email" name="email" placeholder="Email Address">
         <h2>Location</h2>
 
@@ -53,9 +52,9 @@ src="https://www.facebook.com/tr?id=1515621239723462&ev=PageView&noscript=1"
     <option>Outside Saskatoon (Travel fee may apply)</option>
 </select>
         <h2>Vehicle Information</h2>
-        <input type="number" name="year" placeholder="Vehicle Year" required>
-        <input type="text" name="make" placeholder="Vehicle Make" required>
-        <input type="text" name="model" placeholder="Vehicle Model" required>
+        <input type="number" name="year" placeholder=" Year       e.g. 2015" required>
+        <input type="text" name="make" placeholder=" Make      e.g. Ford" required>
+        <input type="text" name="model" placeholder=" Model     e.g. Mustang" required>
         <h2>Requested Service</h2>
         <select name="service" id="serviceSelect" required>
           <option value="">Select Service</option>
@@ -64,28 +63,9 @@ src="https://www.facebook.com/tr?id=1515621239723462&ev=PageView&noscript=1"
           <option value="exterior">Exterior Detail</option>
           <option value="full">Full Detail Package</option>
         </select>
-        <div id="interiorConditionContainer">
-          <h2>Interior Condition</h2>
-          <select name="interior_condition" id="interiorCondition">
-            <option value="">Interior Condition</option>
-            <option>Excellent</option>
-            <option>Good</option>
-            <option>Fair</option>
-            <option>Heavily Soiled</option>
-          </select>
-        </div>
-        <div id="exteriorConditionContainer">
-          <h2>Exterior Condition</h2>
-          <select name="exterior_condition" id="exteriorCondition">
-            <option value="">Exterior Condition</option>
-            <option>Excellent</option>
-            <option>Good</option>
-            <option>Fair</option>
-            <option>Needs Significant Cleaning</option>
-          </select>
-        </div>
+        
         <h2>Additional Notes</h2>
-        <textarea name="notes" placeholder="Tell us anything else that may affect the quote..."></textarea>
+        <textarea name="notes" placeholder="Describe the condition of the vehicle (dog hair, carpet stains, etc...)"></textarea>
         <button type="submit" class="btn btn-primary">Request Quote</button>
       </form>
     </div>
