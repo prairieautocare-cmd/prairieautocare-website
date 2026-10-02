@@ -1,0 +1,25 @@
+{
+  "name": "prairieautocare-website",
+  "version": "1.0.0",
+  "description": "Prairie Auto Care website with Airtable-backed quote form",
+  "main": "server.js",
+  "scripts": {
+    "start": "netlify dev",
+    "dev": "netlify dev"
+  },
+  "keywords": [
+    "website",
+    "airtable",
+    "booking",
+    "detailing"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "airtable": "^0.12.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.34.0"
+  }
+}
