@@ -28,6 +28,12 @@ nav{
   z-index:1000;
 }
 
+nav::after{
+  content:"Version 1.0";
+  color:#5b8fbd;
+  font-size:.75rem;
+}
+
 .logo{
   font-size:1.5rem;
   font-weight:bold;

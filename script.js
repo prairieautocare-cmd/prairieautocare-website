@@ -1,7 +1,7 @@
 console.log("Prairie Auto Care website loaded.");
 
 const serviceSelect = document.getElementById("serviceSelect");
-const photosInput = document.getElementById("photos");
+const photosInput = document.getElementById("vehiclePhoto");
 const interiorContainer = document.getElementById("interiorConditionContainer");
 const exteriorContainer = document.getElementById("exteriorConditionContainer");
 const interiorCondition = document.getElementById("interiorCondition");
@@ -56,6 +56,17 @@ async function readFileAsDataUrl(file) {
 
 if (bookingForm) {
   bookingForm.addEventListener("submit", async function (e) {
+    if (bookingForm.action.startsWith("https://formspree.io/")) {
+      const phone = bookingForm.elements.phone.value.trim();
+      const email = bookingForm.elements.email.value.trim();
+
+      if (!phone && !email) {
+        e.preventDefault();
+        alert("Please provide either a phone number or email address.");
+      }
+      return;
+    }
+
     e.preventDefault();
 
     const formData = new FormData(bookingForm);
@@ -63,6 +74,7 @@ if (bookingForm) {
     const phone = (payload.phone || "").trim();
     const email = (payload.email || "").trim();
     const file = formData.get("vehicle_photo");
+    delete payload.vehicle_photo;
 
     if (!phone && !email) {
       alert("Please provide either a phone number or email address.");
@@ -72,8 +84,10 @@ if (bookingForm) {
     try {
       payload.phone = phone;
       payload.email = email;
-      payload.vehicle_photo_name = file && file.name ? file.name : "";
-      payload.vehicle_photo_data = file ? await readFileAsDataUrl(file) : "";
+      if (file instanceof File && file.size > 0) {
+        payload.vehicle_photo_name = file.name;
+        payload.vehicle_photo_data = await readFileAsDataUrl(file);
+      }
 
       const response = await fetch("/api/quote", {
         method: "POST",
@@ -83,7 +97,12 @@ if (bookingForm) {
         body: JSON.stringify(payload)
       });
 
-      const result = await response.json();
+      let result;
+      try {
+        result = await response.json();
+      } catch {
+        throw new Error("The server returned an invalid response. Please try again.");
+      }
 
       if (!response.ok) {
         throw new Error(result.message || "Unable to submit your request.");
