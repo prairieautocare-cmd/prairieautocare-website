@@ -1,7 +1,6 @@
 console.log("Prairie Auto Care website loaded.");
 
 const serviceSelect = document.getElementById("serviceSelect");
-const photosInput = document.getElementById("vehiclePhoto");
 const interiorContainer = document.getElementById("interiorConditionContainer");
 const exteriorContainer = document.getElementById("exteriorConditionContainer");
 const interiorCondition = document.getElementById("interiorCondition");
@@ -28,30 +27,10 @@ function updateForm() {
     interiorContainer.style.display = "block";
     exteriorContainer.style.display = "block";
   }
-
-  if (photosInput && photosInput.files && photosInput.files.length > 0) {
-    if (interiorCondition) interiorCondition.required = false;
-    if (exteriorCondition) exteriorCondition.required = false;
-  }
 }
 
 if (serviceSelect) {
   serviceSelect.addEventListener("change", updateForm);
-}
-
-if (photosInput) {
-  photosInput.addEventListener("change", updateForm);
-}
-
-async function readFileAsDataUrl(file) {
-  if (!file) return "";
-
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result || "");
-    reader.onerror = () => reject(new Error("Unable to read uploaded image."));
-    reader.readAsDataURL(file);
-  });
 }
 
 if (bookingForm) {
@@ -73,8 +52,6 @@ if (bookingForm) {
     const payload = Object.fromEntries(formData.entries());
     const phone = (payload.phone || "").trim();
     const email = (payload.email || "").trim();
-    const file = formData.get("vehicle_photo");
-    delete payload.vehicle_photo;
 
     if (!phone && !email) {
       alert("Please provide either a phone number or email address.");
@@ -84,10 +61,6 @@ if (bookingForm) {
     try {
       payload.phone = phone;
       payload.email = email;
-      if (file instanceof File && file.size > 0) {
-        payload.vehicle_photo_name = file.name;
-        payload.vehicle_photo_data = await readFileAsDataUrl(file);
-      }
 
       const response = await fetch("/api/quote", {
         method: "POST",

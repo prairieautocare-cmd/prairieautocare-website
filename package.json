@@ -1,6 +1,6 @@
 {
   "name": "prairieautocare-website",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Prairie Auto Care website with Airtable-backed quote form",
   "main": "server.js",
   "scripts": {

@@ -29,7 +29,7 @@ nav{
 }
 
 nav::after{
-  content:"Version 1.0";
+  content:"Version 1.1";
   color:#5b8fbd;
   font-size:.75rem;
 }
